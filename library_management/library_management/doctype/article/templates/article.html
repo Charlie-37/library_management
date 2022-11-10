@@ -1,0 +1,82 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<style>
+    #profilePic{
+        /* height: 200px; */
+        /* border: 2px solid black;  */
+        padding: 0;
+    }
+
+    #id{
+        position: relative;
+        left: 0;
+        margin: 0;
+
+    }
+
+    #desc h1{
+        font-size: 38px;
+        text-decoration: underline 3px;  
+        text-decoration-color: rgb(30, 194, 231); 
+        text-underline-offset: 8px;
+        
+    }
+    #bdgButton{
+        margin: 0;
+        padding: 0;
+        margin-top: 30px;
+    }
+    .badge{
+        height: 30px;
+        width: 100px;
+        font-size: 15px;
+        padding: auto;
+        padding-top: 6px;
+        left: 0;
+        text-align: center;
+        
+    }
+
+</style>
+<h1>{{ title }}</h1><br>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="container-fluid" id="profilePic">
+            <img  id='pic'src="{{aimage}}" alt="{{title}}" height="200px" width="100%">
+        </div>
+
+    </div>
+    <div class="col-md-8">
+        <div class="container" id="desc">
+            <h1>{{author}}</h1>
+            <!-- <h1>{{status}}</h1> -->
+            
+
+            <div class="container" id="bdgButton">
+                {%- if status == 'Available' -%}
+                
+                <span class="badge badge-success">Avaliable</span>
+    
+                {%- elif status == 'Issued' -%}
+                <span class="badge badge-danger">Issued</span>
+    
+                {%- else -%}
+                <p>not got</p>
+    
+                {%- endif -%} <br> <br>
+
+                <span> <strong>Publisher :</strong> {{publisher}}</span><br>
+                <span> <strong>ISBN :</strong> {{isbn}}</span>
+            </div>
+            
+            <p>{{ description }}</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+<!-- this is a sample default web page template -->

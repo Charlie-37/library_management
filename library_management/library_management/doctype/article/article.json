@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "field:aname",
  "creation": "2022-10-31 14:17:14.837932",
@@ -17,7 +18,9 @@
   "section_break_7",
   "isbn",
   "status",
-  "publisher"
+  "publisher",
+  "route",
+  "published"
  ],
  "fields": [
   {
@@ -77,12 +80,24 @@
    "fieldtype": "Image",
    "label": "Picture",
    "options": "aimage"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "published",
+   "fieldtype": "Data",
+   "label": "Published"
   }
  ],
+ "has_web_view": 1,
  "image_field": "aimage",
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [],
- "modified": "2022-10-31 14:34:10.578016",
+ "modified": "2022-11-02 16:14:57.796212",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
@@ -122,6 +137,7 @@
    "share": 1
   }
  ],
+ "route": "articles",
  "sort_field": "modified",
  "sort_order": "DESC"
 }

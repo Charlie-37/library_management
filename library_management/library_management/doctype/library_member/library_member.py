@@ -8,4 +8,8 @@ from frappe.model.document import Document
 class LibraryMember(Document):
 	def before_save(self):
 		self.full_name = f'{self.fname} {self.last_name}'
+
+
+	
 		
+	
